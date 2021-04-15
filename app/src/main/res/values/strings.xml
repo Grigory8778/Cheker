@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Cheker</string>
     <string name="Name">Название</string>
+    <string name="Satting">Настройки</string>
 </resources>
