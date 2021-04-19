@@ -3,4 +3,5 @@
     <dimen name="marg">16dp</dimen>
     <dimen name="txt_size">24sp</dimen>
     <dimen name="marg_top">8dp</dimen>
+    <dimen name="height">70dp</dimen>
 </resources>
