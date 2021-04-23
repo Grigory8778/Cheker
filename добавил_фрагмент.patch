@@ -1,0 +1,408 @@
+Index: .idea/inspectionProfiles/Project_Default.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/inspectionProfiles/Project_Default.xml	(date 1618982190677)
++++ .idea/inspectionProfiles/Project_Default.xml	(date 1618982190677)
+@@ -0,0 +1,10 @@
++<component name="InspectionProjectProfileManager">
++  <profile version="1.0">
++    <option name="myName" value="Project Default" />
++    <inspection_tool class="AndroidUnresolvableTag" enabled="false" level="ERROR" enabled_by_default="false" />
++    <inspection_tool class="ConstantConditions" enabled="true" level="WARNING" enabled_by_default="true">
++      <option name="SUGGEST_NULLABLE_ANNOTATIONS" value="false" />
++      <option name="DONT_REPORT_TRUE_ASSERT_STATEMENTS" value="false" />
++    </inspection_tool>
++  </profile>
++</component>
+\ No newline at end of file
+Index: app/src/main/java/com/pgh/cheker/AddBut.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/pgh/cheker/AddBut.kt	(date 1619158248986)
++++ app/src/main/java/com/pgh/cheker/AddBut.kt	(date 1619158248986)
+@@ -0,0 +1,21 @@
++package com.pgh.cheker
++
++import android.os.Build
++import android.os.Bundle
++import android.view.*
++import android.widget.Toolbar
++import androidx.annotation.RequiresApi
++import androidx.fragment.app.Fragment
++
++class AddBut : Fragment() {
++    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
++        return inflater.inflate(R.layout.fragment_add_content, container, false)
++    }
++
++    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
++    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
++        super.onViewCreated(view, savedInstanceState)
++        val toolb = view.findViewById<Toolbar>(R.id.tobar)
++        toolb.inflateMenu(R.menu.menu_add)
++    }
++}
+\ No newline at end of file
+Index: app/src/main/res/drawable/ic_baseline_settings_24.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/drawable/ic_baseline_settings_24.xml	(date 1619155888365)
++++ app/src/main/res/drawable/ic_baseline_settings_24.xml	(date 1619155888365)
+@@ -0,0 +1,10 @@
++<vector xmlns:android="http://schemas.android.com/apk/res/android"
++    android:width="24dp"
++    android:height="24dp"
++    android:viewportWidth="24"
++    android:viewportHeight="24"
++    android:tint="?attr/colorControlNormal">
++  <path
++      android:fillColor="@android:color/white"
++      android:pathData="M19.14,12.94c0.04,-0.3 0.06,-0.61 0.06,-0.94c0,-0.32 -0.02,-0.64 -0.07,-0.94l2.03,-1.58c0.18,-0.14 0.23,-0.41 0.12,-0.61l-1.92,-3.32c-0.12,-0.22 -0.37,-0.29 -0.59,-0.22l-2.39,0.96c-0.5,-0.38 -1.03,-0.7 -1.62,-0.94L14.4,2.81c-0.04,-0.24 -0.24,-0.41 -0.48,-0.41h-3.84c-0.24,0 -0.43,0.17 -0.47,0.41L9.25,5.35C8.66,5.59 8.12,5.92 7.63,6.29L5.24,5.33c-0.22,-0.08 -0.47,0 -0.59,0.22L2.74,8.87C2.62,9.08 2.66,9.34 2.86,9.48l2.03,1.58C4.84,11.36 4.8,11.69 4.8,12s0.02,0.64 0.07,0.94l-2.03,1.58c-0.18,0.14 -0.23,0.41 -0.12,0.61l1.92,3.32c0.12,0.22 0.37,0.29 0.59,0.22l2.39,-0.96c0.5,0.38 1.03,0.7 1.62,0.94l0.36,2.54c0.05,0.24 0.24,0.41 0.48,0.41h3.84c0.24,0 0.44,-0.17 0.47,-0.41l0.36,-2.54c0.59,-0.24 1.13,-0.56 1.62,-0.94l2.39,0.96c0.22,0.08 0.47,0 0.59,-0.22l1.92,-3.32c0.12,-0.22 0.07,-0.47 -0.12,-0.61L19.14,12.94zM12,15.6c-1.98,0 -3.6,-1.62 -3.6,-3.6s1.62,-3.6 3.6,-3.6s3.6,1.62 3.6,3.6S13.98,15.6 12,15.6z"/>
++</vector>
+Index: app/src/main/res/drawable/ic_baseline_check_24.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/drawable/ic_baseline_check_24.xml	(date 1619086527985)
++++ app/src/main/res/drawable/ic_baseline_check_24.xml	(date 1619086527985)
+@@ -0,0 +1,10 @@
++<vector xmlns:android="http://schemas.android.com/apk/res/android"
++    android:width="24dp"
++    android:height="24dp"
++    android:viewportWidth="24"
++    android:viewportHeight="24"
++    android:tint="?attr/colorControlNormal">
++  <path
++      android:fillColor="@android:color/white"
++      android:pathData="M9,16.17L4.83,12l-1.42,1.41L9,19 21,7l-1.41,-1.41z"/>
++</vector>
+Index: app/src/main/java/com/pgh/cheker/MainActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/pgh/cheker/MainActivity.kt	(revision df80cae0a5814446a8334ee0794e7898a169934b)
++++ app/src/main/java/com/pgh/cheker/MainActivity.kt	(date 1619164082254)
+@@ -4,44 +4,22 @@
+ import androidx.appcompat.app.AppCompatActivity
+ import android.os.Bundle
+ import android.view.Menu
++import android.view.MenuItem
++import android.widget.FrameLayout
+ import android.widget.ImageView
+ import androidx.appcompat.widget.Toolbar
+ import androidx.recyclerview.widget.LinearLayoutManager
+ import androidx.recyclerview.widget.RecyclerView
+ 
+ class MainActivity : AppCompatActivity() {
+-
++    private val addBut = RecFragment()
+     override fun onCreate(savedInstanceState: Bundle?) {
+         super.onCreate(savedInstanceState)
+-        setContentView(R.layout.activity_main)
+-        val img = findViewById<ImageView>(R.id.rec_image)
+-        val toolbar = findViewById<Toolbar>(R.id.tobar)
+-        setSupportActionBar(toolbar)
+-        val rs = findViewById<RecyclerView>(R.id.res)
+-        val layoutManager = LinearLayoutManager(this)
+-        val adapter = StAdapter(
+-            listOf(
+-                StResult(
+-                    "dsadasd",
+-                    "https://ribalych.ru/wp-content/uploads/2020/03/smeshnye-kartinki-nastroenie_001-1.jpg"
+-                ),
+-                StResult(
+-                    "aaaaaaaaaaaaaaa",
+-                    "https://i.pinimg.com/736x/d9/86/a9/d986a9476263f1e9399e2f0f6020f6da.jpg"
+-                ),
+-                StResult(
+-                    "ghhjaaaa",
+-                    "https://the-flow.ru/uploads/images/resize/830x0/adaptiveResize/15/77/94/35/48/bb23aed40cd7.jpg"
+-                )
+-            )
+-        )
+-        rs.layoutManager = layoutManager
+-        rs.adapter = adapter
+-    }
++        setContentView(R.layout.activity_main)//Добавляет верстку в активити
+ 
+-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+-        val inflater = menuInflater
+-        inflater.inflate(R.menu.menu_main, menu)
+-        return super.onCreateOptionsMenu(menu)
++        supportFragmentManager.beginTransaction()//запускает указанный фрагмент
++            .replace(R.id.frame_act, addBut)//выбор фрагмента
++            .commit()
++
+     }
+-}
++}
+\ No newline at end of file
+Index: app/src/main/res/menu/menu_main.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/menu/menu_main.xml	(revision df80cae0a5814446a8334ee0794e7898a169934b)
++++ app/src/main/res/menu/menu_main.xml	(date 1619156229378)
+@@ -1,12 +1,10 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <menu xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto">
+-    xmlns:app="http://schemas.android.com/apk/res-auto"
+-    xmlns:tools="http://schemas.android.com/tools"
+-    tools:context=".MainActivity">
+     <item
+         android:id="@+id/action_settings"
+         android:orderInCategory="100"
+         android:title="@string/Satting"
+-        app:showAsAction="never"/>
++        android:icon="@drawable/ic_baseline_settings_24"
++        app:showAsAction="always" />
+ </menu>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_main.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_main.xml	(revision df80cae0a5814446a8334ee0794e7898a169934b)
++++ app/src/main/res/layout/activity_main.xml	(date 1619164669687)
+@@ -7,34 +7,14 @@
+     android:orientation="vertical"
+     tools:context=".MainActivity">
+ 
+-    <androidx.appcompat.widget.Toolbar
+-        android:id="@+id/tobar"
+-        android:layout_width="match_parent"
+-        android:layout_height="wrap_content"
+-        android:background="@color/color_tollbar"
+-        app:layout_constraintTop_toTopOf="parent"
+-        app:navigationIcon="@drawable/arrow"
+-        app:title="@string/Name"
+-        >
+ 
+-    </androidx.appcompat.widget.Toolbar>
+ 
+-    <androidx.recyclerview.widget.RecyclerView
+-        android:id="@+id/res"
++    <FrameLayout
++        android:id="@+id/frame_act"
+         android:layout_width="match_parent"
+         android:layout_height="0dp"
+         app:layout_constraintBottom_toBottomOf="parent"
+-        app:layout_constraintTop_toBottomOf="@id/tobar" />
++        app:layout_constraintTop_toTopOf="parent" />
+ 
+-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+-        android:layout_width="wrap_content"
+-        android:layout_height="wrap_content"
+-        android:layout_gravity="end"
+-        android:layout_marginEnd="@dimen/marg"
+-        android:layout_marginStart="@dimen/marg"
+-        android:layout_marginBottom="@dimen/marg"
+-        android:src="@android:drawable/ic_input_add"
+-        app:layout_constraintBottom_toBottomOf="parent"
+-        app:layout_constraintEnd_toEndOf="parent" />
+ 
+ </androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/res/menu/menu_add.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/menu/menu_add.xml	(date 1619156229425)
++++ app/src/main/res/menu/menu_add.xml	(date 1619156229425)
+@@ -0,0 +1,10 @@
++<?xml version="1.0" encoding="utf-8"?>
++<menu xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto">
++    <item
++        android:id="@+id/menu_add"
++        app:showAsAction="always"
++        android:icon="@drawable/ic_baseline_check_24"
++        android:orderInCategory="100"
++        android:title="@string/Satting" />
++</menu>
+\ No newline at end of file
+Index: app/src/main/java/com/pgh/cheker/RecFragment.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/pgh/cheker/RecFragment.kt	(date 1619164115898)
++++ app/src/main/java/com/pgh/cheker/RecFragment.kt	(date 1619164115898)
+@@ -0,0 +1,52 @@
++package com.pgh.cheker
++
++import android.os.Build
++import android.os.Bundle
++import android.view.LayoutInflater
++import android.view.View
++import android.view.ViewGroup
++import android.widget.ImageView
++import androidx.annotation.RequiresApi
++import androidx.appcompat.widget.Toolbar
++import androidx.fragment.app.Fragment
++import androidx.recyclerview.widget.LinearLayoutManager
++import androidx.recyclerview.widget.RecyclerView
++
++class RecFragment : Fragment() {
++    override fun onCreateView(
++        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
++    ): View? {
++        return inflater.inflate(R.layout.second_fragment, container, false)
++
++    }
++
++    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
++    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
++        super.onViewCreated(view, savedInstanceState)
++        val img = view.findViewById<ImageView>(R.id.rec_image)
++        val toolbar = view.findViewById<Toolbar>(R.id.tobar)
++        val rs = view.findViewById<RecyclerView>(R.id.res)
++        val layoutManager = LinearLayoutManager(context)
++        val adapter = StAdapter(
++            listOf(
++                StResult(
++                    "dsadasd",
++                    "https://ribalych.ru/wp-content/uploads/2020/03/smeshnye-kartinki-nastroenie_001-1.jpg"
++                ),
++                StResult(
++                    "aaaaaaaaaaaaaaa",
++                    "https://i.pinimg.com/736x/d9/86/a9/d986a9476263f1e9399e2f0f6020f6da.jpg"
++                ),
++                StResult(
++                    "ghhjaaaa",
++                    "https://the-flow.ru/uploads/images/resize/830x0/adaptiveResize/15/77/94/35/48/bb23aed40cd7.jpg"
++                )
++            )
++        )
++        rs.layoutManager = layoutManager
++        rs.adapter = adapter
++        toolbar.inflateMenu(R.menu.menu_main)
++    }
++
++
++}
+\ No newline at end of file
+Index: app/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/build.gradle	(revision df80cae0a5814446a8334ee0794e7898a169934b)
++++ app/build.gradle	(date 1618981574697)
+@@ -33,6 +33,7 @@
+ }
+ 
+ dependencies {
++    implementation "androidx.fragment:fragment:1.2.5"
+     implementation 'com.github.bumptech.glide:glide:4.6.1'
+     implementation 'com.google.android.material:material:1.0.0'
+     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+Index: app/src/main/res/values/dimens.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/values/dimens.xml	(revision df80cae0a5814446a8334ee0794e7898a169934b)
++++ app/src/main/res/values/dimens.xml	(date 1619088875165)
+@@ -4,4 +4,5 @@
+     <dimen name="txt_size">24sp</dimen>
+     <dimen name="marg_top">8dp</dimen>
+     <dimen name="height">70dp</dimen>
++    <dimen name="baselina_dp">35dp</dimen>
+ </resources>
+\ No newline at end of file
+Index: app/src/main/res/layout/fragment_add_content.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/fragment_add_content.xml	(date 1619088875120)
++++ app/src/main/res/layout/fragment_add_content.xml	(date 1619088875120)
+@@ -0,0 +1,32 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    xmlns:app="http://schemas.android.com/apk/res-auto">
++
++    <androidx.appcompat.widget.Toolbar
++        android:id="@+id/tobar"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:background="@color/color_tollbar"
++        app:layout_constraintTop_toTopOf="parent"
++        app:navigationIcon="@drawable/arrow"
++        app:title="@string/Name"
++        tools:layout_editor_absoluteX="0dp">
++
++        <ImageView
++            android:layout_width="@dimen/baselina_dp"
++            android:layout_height="@dimen/baselina_dp"
++            android:src="@drawable/ic_baseline_check_24"
++            app:layout_constraintEnd_toEndOf="parent" />
++    </androidx.appcompat.widget.Toolbar>
++
++    <EditText
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        app:layout_constraintTop_toBottomOf="@+id/tobar"
++        app:layout_constraintStart_toStartOf="parent"/>
++
++</androidx.constraintlayout.widget.ConstraintLayout>
++
+Index: app/src/main/res/layout/second_fragment.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/second_fragment.xml	(date 1619164669668)
++++ app/src/main/res/layout/second_fragment.xml	(date 1619164669668)
+@@ -0,0 +1,34 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent">
++    <androidx.appcompat.widget.Toolbar
++        android:id="@+id/tobar"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:background="@color/color_tollbar"
++        app:layout_constraintTop_toTopOf="parent"
++        app:navigationIcon="@drawable/arrow"
++        app:title="@string/Name" />
++
++    <androidx.recyclerview.widget.RecyclerView
++        android:id="@+id/res"
++        android:layout_width="match_parent"
++        android:layout_height="0dp"
++        android:layout_marginTop="@dimen/marg_top"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintTop_toBottomOf="@id/tobar" />
++
++    <com.google.android.material.floatingactionbutton.FloatingActionButton
++        android:id="@+id/add_butt"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_gravity="end"
++        android:layout_marginStart="@dimen/marg"
++        android:layout_marginEnd="@dimen/marg"
++        android:layout_marginBottom="@dimen/marg"
++        android:src="@android:drawable/ic_input_add"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent" />
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
