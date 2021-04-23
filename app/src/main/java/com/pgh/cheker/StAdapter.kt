@@ -9,8 +9,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
 class StAdapter(private val list: List<StResult>) : RecyclerView.Adapter<StAdapter.StViewHonder>() {
-
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StViewHonder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false)
         return StViewHonder(view)

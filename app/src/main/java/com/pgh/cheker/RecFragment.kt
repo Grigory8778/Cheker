@@ -23,7 +23,6 @@ class RecFragment : Fragment() {
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val img = view.findViewById<ImageView>(R.id.rec_image)
         val toolbar = view.findViewById<Toolbar>(R.id.tobar)
         val rs = view.findViewById<RecyclerView>(R.id.res)
         val layoutManager = LinearLayoutManager(context)
