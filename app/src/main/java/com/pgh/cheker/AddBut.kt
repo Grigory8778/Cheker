@@ -3,7 +3,7 @@ package com.pgh.cheker
 import android.os.Build
 import android.os.Bundle
 import android.view.*
-import android.widget.Toolbar
+import androidx.appcompat.widget.Toolbar
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 
@@ -15,7 +15,10 @@ class AddBut : Fragment() {
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val toolb = view.findViewById<Toolbar>(R.id.tobar)
-        toolb.inflateMenu(R.menu.menu_add)
+        val toolbar = view.findViewById<Toolbar>(R.id.tobar)
+        toolbar.inflateMenu(R.menu.menu_add)
+        toolbar.setNavigationOnClickListener{
+            (requireActivity()as? MainActivity?)?.back()
+        }
     }
 }
