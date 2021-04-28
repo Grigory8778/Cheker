@@ -56,6 +56,7 @@ class RecFragment : Fragment() {
             (requireActivity() as? MainActivity?)?.secFragment()
         }
     }
-
-
+    fun click(st: String){
+        Toast.makeText(context, st, Toast.LENGTH_SHORT).show()
+    }
 }

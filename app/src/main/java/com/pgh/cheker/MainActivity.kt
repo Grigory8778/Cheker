@@ -1,40 +1,43 @@
 package com.pgh.cheker
 
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
-import android.widget.FrameLayout
-import android.widget.ImageView
-import androidx.appcompat.widget.Toolbar
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), Listener {
     private val recFragment = RecFragment()
+    private val addBut = AddFragment()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)//Добавляет верстку в активити
 
         supportFragmentManager.beginTransaction()//запускает указанный фрагмент
-            .replace(R.id.frame_act, recFragment)//выбор фрагмента
+            .add(R.id.frame_act, recFragment)//выбор фрагмента
+            .add(R.id.frame_act, addBut)
+            .hide(addBut)
+            .show(recFragment)
             .commit()
-
-
     }
 
     fun back() {
         supportFragmentManager.beginTransaction()//запускает указанный фрагмент
-            .replace(R.id.frame_act, recFragment)//выбор фрагмента
+            .show(recFragment)//выбор фрагмента
+            .hide(addBut)
             .commit()
     }
 
     fun secFragment() {
-        val addBut = AddBut()
         supportFragmentManager.beginTransaction()//запускает указанный фрагмент
-            .replace(R.id.frame_act, addBut)//выбор фрагмента
+            .show(addBut)//выбор фрагмента
+            .hide(recFragment)
             .commit()
+    }
+
+    override fun etd(str: String) {
+        supportFragmentManager.beginTransaction()//запускает указанный фрагмент
+            .show(recFragment)//выбор фрагмента
+            .hide(addBut)
+            .commit()
+        recFragment.click(str)
     }
 }
 
