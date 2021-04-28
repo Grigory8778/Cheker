@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:background="@color/color_tollbar"
         app:layout_constraintTop_toTopOf="parent"
-        app:navigationIcon="@drawable/arrow"
+        app:navigationIcon="@drawable/ic_baseline_close_24"
         app:title="@string/Name" />
 
     <androidx.recyclerview.widget.RecyclerView

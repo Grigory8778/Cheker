@@ -12,14 +12,29 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
-    private val addBut = RecFragment()
+    private val recFragment = RecFragment()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)//Добавляет верстку в активити
 
         supportFragmentManager.beginTransaction()//запускает указанный фрагмент
-            .replace(R.id.frame_act, addBut)//выбор фрагмента
+            .replace(R.id.frame_act, recFragment)//выбор фрагмента
             .commit()
 
+
+    }
+
+    fun back() {
+        supportFragmentManager.beginTransaction()//запускает указанный фрагмент
+            .replace(R.id.frame_act, recFragment)//выбор фрагмента
+            .commit()
+    }
+
+    fun secFragment() {
+        val addBut = AddBut()
+        supportFragmentManager.beginTransaction()//запускает указанный фрагмент
+            .replace(R.id.frame_act, addBut)//выбор фрагмента
+            .commit()
     }
 }
+

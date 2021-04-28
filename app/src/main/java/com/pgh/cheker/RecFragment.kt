@@ -2,15 +2,18 @@ package com.pgh.cheker
 
 import android.os.Build
 import android.os.Bundle
+import android.service.controls.actions.FloatAction
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class RecFragment : Fragment() {
     override fun onCreateView(
@@ -23,6 +26,7 @@ class RecFragment : Fragment() {
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val add = view.findViewById<FloatingActionButton>(R.id.add_butt)
         val toolbar = view.findViewById<Toolbar>(R.id.tobar)
         val rs = view.findViewById<RecyclerView>(R.id.res)
         val layoutManager = LinearLayoutManager(context)
@@ -45,6 +49,12 @@ class RecFragment : Fragment() {
         rs.layoutManager = layoutManager
         rs.adapter = adapter
         toolbar.inflateMenu(R.menu.menu_main)
+        toolbar.setNavigationOnClickListener {
+            requireActivity().finish()
+        }
+        add.setOnClickListener {
+            (requireActivity() as? MainActivity?)?.secFragment()
+        }
     }
 
 

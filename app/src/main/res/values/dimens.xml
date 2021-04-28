@@ -5,4 +5,5 @@
     <dimen name="marg_top">8dp</dimen>
     <dimen name="height">70dp</dimen>
     <dimen name="baselina_dp">35dp</dimen>
+    <dimen name="edit_width">144dp</dimen>
 </resources>
