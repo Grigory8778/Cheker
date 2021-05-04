@@ -1,40 +1,55 @@
 package com.pgh.cheker
 
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
-import android.widget.FrameLayout
-import android.widget.ImageView
-import androidx.appcompat.widget.Toolbar
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import android.widget.Toast
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), interfAdd {
     private val recFragment = RecFragment()
+    private val addBut = AddFragment()
+    private var bool: Boolean = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)//Добавляет верстку в активити
 
         supportFragmentManager.beginTransaction()//запускает указанный фрагмент
-            .replace(R.id.frame_act, recFragment)//выбор фрагмента
+            .add(R.id.frame_act, recFragment)//выбор фрагмента
+            .add(R.id.frame_act, addBut)
+            .hide(addBut)
+            .show(recFragment)
             .commit()
+    }
 
-
+    fun exit() {
+        if (bool) {
+            finish()
+        } else {
+            bool = true
+            Toast.makeText(this, "Нажмите повторно для выхода ", Toast.LENGTH_SHORT).show()
+        }
     }
 
     fun back() {
         supportFragmentManager.beginTransaction()//запускает указанный фрагмент
-            .replace(R.id.frame_act, recFragment)//выбор фрагмента
+            .show(recFragment)//выбор фрагмента
+            .hide(addBut)
             .commit()
     }
 
     fun secFragment() {
-        val addBut = AddBut()
         supportFragmentManager.beginTransaction()//запускает указанный фрагмент
-            .replace(R.id.frame_act, addBut)//выбор фрагмента
+            .show(addBut)//выбор фрагмента
+            .hide(recFragment)
             .commit()
     }
+
+    override fun ToastData(str: String) {
+        supportFragmentManager.beginTransaction()//запускает указанный фрагмент
+            .show(recFragment)//выбор фрагмента
+            .hide(addBut)
+            .commit()
+        recFragment.click(str)
+    }
+
 }
 

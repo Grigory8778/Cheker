@@ -50,12 +50,14 @@ class RecFragment : Fragment() {
         rs.adapter = adapter
         toolbar.inflateMenu(R.menu.menu_main)
         toolbar.setNavigationOnClickListener {
-            requireActivity().finish()
+            (requireActivity() as? MainActivity?)?.exit()
         }
         add.setOnClickListener {
             (requireActivity() as? MainActivity?)?.secFragment()
         }
     }
-
+    fun click(st: String){
+        Toast.makeText(context, st, Toast.LENGTH_SHORT).show()
+    }
 
 }
