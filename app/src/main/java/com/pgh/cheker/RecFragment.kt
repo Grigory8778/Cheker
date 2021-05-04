@@ -33,15 +33,15 @@ class RecFragment : Fragment() {
         val adapter = StAdapter(
             listOf(
                 StResult(
-                    "dsadasd",
+                    "Первый",
                     "https://ribalych.ru/wp-content/uploads/2020/03/smeshnye-kartinki-nastroenie_001-1.jpg"
                 ),
                 StResult(
-                    "aaaaaaaaaaaaaaa",
+                    "Второй",
                     "https://i.pinimg.com/736x/d9/86/a9/d986a9476263f1e9399e2f0f6020f6da.jpg"
                 ),
                 StResult(
-                    "ghhjaaaa",
+                    "Третий",
                     "https://the-flow.ru/uploads/images/resize/830x0/adaptiveResize/15/77/94/35/48/bb23aed40cd7.jpg"
                 )
             )
@@ -56,7 +56,8 @@ class RecFragment : Fragment() {
             (requireActivity() as? MainActivity?)?.secFragment()
         }
     }
-    fun click(st: String){
+
+    fun click(st: String) {
         Toast.makeText(context, st, Toast.LENGTH_SHORT).show()
     }
 

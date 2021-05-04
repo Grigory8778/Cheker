@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 
-class MainActivity : AppCompatActivity(), interfAdd {
+class MainActivity : AppCompatActivity(), InterfAdd {
     private val recFragment = RecFragment()
     private val addBut = AddFragment()
     private var bool: Boolean = false
@@ -43,13 +43,12 @@ class MainActivity : AppCompatActivity(), interfAdd {
             .commit()
     }
 
-    override fun ToastData(str: String) {
+    override fun toastData(str: String) {
         supportFragmentManager.beginTransaction()//запускает указанный фрагмент
             .show(recFragment)//выбор фрагмента
             .hide(addBut)
             .commit()
         recFragment.click(str)
     }
-
 }
 

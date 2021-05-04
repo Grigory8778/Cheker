@@ -4,12 +4,10 @@ import android.os.Build
 import android.os.Bundle
 import android.view.*
 import android.widget.EditText
-import android.widget.Toast
-import android.widget.Toast.makeText
 import androidx.appcompat.widget.Toolbar
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
-import android.widget.Toast.LENGTH_SHORT as LENGTH_SHORT1
+
 
 class AddFragment : Fragment() {
     override fun onCreateView(
@@ -31,7 +29,7 @@ class AddFragment : Fragment() {
         }
         toolbar.setOnMenuItemClickListener {
             if (it.itemId == R.id.menu_add) {
-                (requireActivity() as? interfAdd?)?.ToastData(edtxt.text.toString())
+                (requireActivity() as? InterfAdd?)?.toastData(edtxt.text.toString())
             }
             true
         }
